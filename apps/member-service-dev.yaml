@@ -7,12 +7,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/JHPush/member-service.git   # Helm Chart가 있는 Git 저장소
+    repoURL: https://github.com/JHPush/gitops-repo.git   # Helm Chart가 있는 Git 저장소
     targetRevision: main                                       # Git 브랜치
     path: dev/member-service                                   # Git 저장소 내부 경로
     helm:
       valueFiles:
-        - values.yaml                                          # Helm values 파일
+        - values.yaml                                       # Helm values 파일
   destination:
     server: https://kubernetes.default.svc                     # 쿠버네티스 API 서버 주소
     namespace: shopmall                                        # Helm Chart가 배포될 네임스페이스
