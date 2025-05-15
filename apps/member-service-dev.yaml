@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://git@github.com:JHPush/member-service.git   # Helm Chart가 있는 Git 저장소
+    repoURL: https://github.com/JHPush/member-service.git   # Helm Chart가 있는 Git 저장소
     targetRevision: main                                       # Git 브랜치
     path: dev/member-service                                   # Git 저장소 내부 경로
     helm:
