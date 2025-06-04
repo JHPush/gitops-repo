@@ -1,8 +1,8 @@
 app:
-  namespace: shopmall
+  namespace: member-service
   name: member-service-api
   replicas: 1
-  image: '897729114133.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:0b67a45f1f0bf5112e1ae539921b0aacb3b4489c'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:e093eae4049f22d9c0bf3be54212473b832a8a83'
   port: 10000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
   # resources:
@@ -47,6 +47,10 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://mysql.shopmall.svc.cluster.local:3306/item_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    url: jdbc:mysql://mysql.inkcloud.svc.cluster.local:3306/member_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
     username: root
     password: "1234"
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: no-reply@example.com

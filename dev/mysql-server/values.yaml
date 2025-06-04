@@ -1,5 +1,5 @@
 mysql:
-  namespace: shopmall
+  namespace: inkcloud
   rootPassword: "1234"
   database: "member_db"  
   image: "mysql:8.4.5"
@@ -13,6 +13,4 @@ initdb:
   enabled: true
   script: |
     CREATE DATABASE IF NOT EXISTS member_db;
-    CREATE DATABASE IF NOT EXISTS order_db;
-    CREATE DATABASE IF NOT EXISTS item_db;
-    CREATE DATABASE IF NOT EXISTS payment_db;
+    CREATE DATABASE IF NOT EXISTS keycloak_db;
