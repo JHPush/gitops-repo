@@ -8,7 +8,7 @@ data:
   SPRING_PROFILES_ACTIVE: {{ .Values.spring.profiles.active | quote }}
   SPRING_DATASOURCE_URL: {{ .Values.spring.datasource.url | quote }}
   SPRING_DATASOURCE_USERNAME: {{ .Values.spring.datasource.username | quote }}
-  # ✉️ 메일 관련 설정
+  # 메일 관련 설정
   SPRING_MAIL_HOST: {{ .Values.spring.mail.host | quote }}
   SPRING_MAIL_PORT: {{ .Values.spring.mail.port | quote }}
   SPRING_MAIL_USERNAME: {{ .Values.spring.mail.username | quote }}
