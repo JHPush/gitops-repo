@@ -1,13 +1,11 @@
 app:
   name: api-gateway-service
   namespace: inkcloud
-  image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/inkcloud/api-gateway-service:latest
+  image: 30118853107.dkr.ecr.ap-northeast-2.amazonaws.com/api-gateway-service:14265ce790060b4fb936d4ebbf90350455f2973a
   port: 8080
   replicas: 1
-
 service:
   type: ClusterIP
   port: 8080
-
 env:
   KEYCLOAK_ISSUER_URI: "https://keycloak.inkcloud.click/realms/inkcloud"
