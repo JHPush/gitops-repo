@@ -1,7 +1,7 @@
 app:
   name: api-gateway-service
   namespace: inkcloud
-  image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/api-gateway-service:ac9adb2d1ddf7574c0da7c08e23b2cdcd20f524f
+  image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/api-gateway-service:8429c7fe9b63cd4ee54de7bc5df4317f0a408d3d
   port: 8080
   replicas: 1
 
@@ -14,6 +14,7 @@ env:
 service:
   type: ClusterIP
   port: 8080
+
 
 ingress:
   enabled: true
