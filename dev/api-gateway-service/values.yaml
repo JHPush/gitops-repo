@@ -4,8 +4,20 @@ app:
   image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/api-gateway-service:14265ce790060b4fb936d4ebbf90350455f2973a
   port: 8080
   replicas: 1
+
 service:
   type: ClusterIP
   port: 8080
+
 env:
   KEYCLOAK_ISSUER_URI: "https://keycloak.inkcloud.click/realms/inkcloud"
+
+ingress:
+  enabled: true
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+  className: alb
+  host: ""
+  path: /
+  pathType: Prefix

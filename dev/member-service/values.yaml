@@ -34,15 +34,15 @@ service:
   enabled: true
   type: ClusterIP
   port: 80
-ingress:
-  enabled: true
-  annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-  className: alb
-  host: ""
-  path: /
-  pathType: Prefix
+# ingress:
+#   enabled: true
+#   annotations:
+#     alb.ingress.kubernetes.io/scheme: internet-facing
+#     alb.ingress.kubernetes.io/target-type: ip
+#   className: alb
+#   host: ""
+#   path: /
+#   pathType: Prefix
 spring:
   profiles:
     active: dev
