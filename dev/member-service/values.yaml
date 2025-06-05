@@ -2,7 +2,7 @@ app:
   namespace: member-service
   name: member-service-api
   replicas: 1
-  image: '30118853107.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:ad45588d0c392db5e6b37233e7f8410a8d36b16c'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:ad45588d0c392db5e6b37233e7f8410a8d36b16c'
   port: 10000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
   # resources:
