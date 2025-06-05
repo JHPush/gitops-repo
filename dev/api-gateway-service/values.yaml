@@ -6,7 +6,7 @@ app:
   replicas: 1
 
 env:
-  SERVER_PORT: "8080"
+  SERVER_PORT: 8080
   SPRING_PROFILES_ACTIVE: "dev"
   MEMBER_SERVICE_API_URL: "http://member-service-api.member-service.svc.cluster.local"
   KEYCLOAK_ISSUER_URI: "https://keycloak.inkcloud.click/realms/inkcloud"

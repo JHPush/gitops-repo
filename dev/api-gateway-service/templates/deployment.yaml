@@ -23,3 +23,7 @@ spec:
               value: "prod"
             - name: KEYCLOAK_ISSUER_URI
               value: {{ .Values.env.KEYCLOAK_ISSUER_URI | quote }}
+            - name: SERVER_PORT
+              value: {{ .Values.env.SERVER_PORT | quote }}
+            - name: MEMBER_SERVICE_API_URL
+              value: {{ .Values.env.MEMBER_SERVICE_API_URL | quote }}
