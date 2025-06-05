@@ -92,4 +92,6 @@ spec:
           livenessProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+      imagePullSecrets:
+        - name: ecr-secret
 
