@@ -10,5 +10,4 @@ service:
   port: 8080
 
 env:
-  - name: KEYCLOAK_ISSUER_URI
-    value: "https://keycloak.inkcloud.click/realms/inkcloud"
+  KEYCLOAK_ISSUER_URI: "https://keycloak.inkcloud.click/realms/inkcloud"
