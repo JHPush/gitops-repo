@@ -34,8 +34,8 @@ service:
   enabled: true
   type: ClusterIP
   port: 80
-# ingress:
-#   enabled: true
+ingress:
+  enabled: false
 #   annotations:
 #     alb.ingress.kubernetes.io/scheme: internet-facing
 #     alb.ingress.kubernetes.io/target-type: ip
