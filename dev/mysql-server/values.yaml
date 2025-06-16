@@ -13,4 +13,8 @@ initdb:
   enabled: true
   script: |
     CREATE DATABASE IF NOT EXISTS member_db;
+    CREATE DATABASE IF NOT EXISTS order_db;
+    CREATE DATABASE IF NOT EXISTS payment_db;
+    CREATE DATABASE IF NOT EXISTS product_db;
+    CREATE DATABASE IF NOT EXISTS review_db;
     CREATE DATABASE IF NOT EXISTS keycloak_db;
