@@ -1,9 +1,9 @@
 app:
-  namespace: member-service
-  name: member-service-api
+  namespace: review-service
+  name: review-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:6d78a62a1ca1584c5c864b0be3c8093e6055e454'
-  port: 10000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:5368fa3975b3564028f7c628c86283efb5f85e30'
+  port: 18000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
   # resources:
   #  requests:
@@ -35,22 +35,18 @@ service:
   type: ClusterIP
   port: 80
 ingress:
-  enabled: false
-#   annotations:
-#     alb.ingress.kubernetes.io/scheme: internet-facing
-#     alb.ingress.kubernetes.io/target-type: ip
-#   className: alb
-#   host: ""
-#   path: /
-#   pathType: Prefix
+  enabled: true
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+  className: alb
+  host: ""
+  path: /
+  pathType: Prefix
 spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://mysql.inkcloud.svc.cluster.local:3306/member_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    url: jdbc:mysql://mysql.inkcloud.svc.cluster.local:3306/review_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
     username: root
     password: "1234"
-  mail:
-    host: sandbox.smtp.mailtrap.io
-    port: 2525
-    username: 503ff5868955c1

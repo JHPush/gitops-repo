@@ -1,0 +1,6 @@
+apiVersion: v2
+name: stats-service
+description: "Deploying the stats-service-api using a Helm chart"
+type: application
+version: 1.0
+appVersion: "1.0"

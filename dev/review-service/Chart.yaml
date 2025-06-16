@@ -1,0 +1,6 @@
+apiVersion: v2
+name: review-service
+description: "Deploying the review-service-api using a Helm chart"
+type: application
+version: 1.0
+appVersion: "1.0"
