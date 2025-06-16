@@ -1,0 +1,25 @@
+app:
+  namespace: alert-service
+  name: alert-service-api
+  replicas: 1
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/alert-service:latest'
+  port: 17777 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
+  resources: {}
+podLabels:
+  tier: backend
+probes:
+  readiness: {}
+  liveness: {}
+service:
+  enabled: true
+  type: ClusterIP
+  port: 80
+ingress:
+  enabled: false
+spring:
+  profiles:
+    active: dev
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: qnrntmvls
