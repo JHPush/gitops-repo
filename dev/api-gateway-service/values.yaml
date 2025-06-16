@@ -8,6 +8,14 @@ env:
   SERVER_PORT: 8080
   SPRING_PROFILES_ACTIVE: "dev"
   MEMBER_SERVICE_API_URL: "http://member-service-api.member-service.svc.cluster.local"
+  REVIEW_SERVICE_API_URL: "http://review-service-api.review-service.svc.cluster.local"
+  STATS_SERVICE_API_URL: "http://stats-service-api.stats-service.svc.cluster.local"
+  ORDER_SERVICE_API_URL: "http://order-service-api.order-service.svc.cluster.local"
+  PAYMENT_SERVICE_API_URL: "http://payment-service-api.payment-service.svc.cluster.local"
+  ALERT_SERVICE_API_URL: "http://alert-service-api.alert-service.svc.cluster.local"
+  PRODUCT_SERVICE_API_URL: "http://product-service-api.product-service.svc.cluster.local"
+  CART_SERVICE_API_URL: "http://cart-service-api.cart-service.svc.cluster.local"
+  BESTSELLERS_SERVICE_API_URL: "http://bestsellers-service-api.bestsellers-service.svc.cluster.local"
   KEYCLOAK_ISSUER_URI: "https://keycloak.inkcloud.click/realms/inkcloud"
 service:
   type: ClusterIP
