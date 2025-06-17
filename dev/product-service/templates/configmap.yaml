@@ -9,4 +9,4 @@ data:
   SPRING_DATASOURCE_URL: {{ .Values.spring.datasource.url | quote }}
   SPRING_DATASOURCE_USERNAME: {{ .Values.spring.datasource.username | quote }}
   # PRODUCT_SERVICE_API_URL: {{ .Values.app.product_service_api_url | quote }}
-
+  SPRING_KEYCLOAK_URL: {{ .Values.env.SPRING_KEYCLOAK_URL | quote }}
