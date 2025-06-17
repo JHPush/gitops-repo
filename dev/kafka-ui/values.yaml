@@ -18,10 +18,10 @@ ingress:
     # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     # alb.ingress.kubernetes.io/ssl-redirect: "443"
   hosts:
-    - host: placeholder.local  # 실제 도메인으로 변경 필요
-      paths:
-        - path: /
-          pathType: Prefix
+    # - host: placeholder.local  # 실제 도메인으로 변경 필요
+    paths:
+      - path: /
+        pathType: Prefix
   tls: []
 
 kafka:
@@ -33,7 +33,7 @@ env:
   - name: KAFKA_CLUSTERS_0_NAME
     value: "local"
   - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-    value: "kafka-cluster-dev-broker.broker.svc.cluster.local:29092"
+    value: "kafka-cluster-dev-broker.broker.svc.cluster.local:9092"
     # value: "broker.kafka-cluster-dev-broker:29092"
 
 # resources:

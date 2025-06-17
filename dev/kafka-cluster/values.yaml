@@ -12,14 +12,6 @@ zookeeper:
     clientPort: 2181
     tickTime: 2000
   
-  # resources:
-  #   requests:
-  #     memory: "256Mi"
-  #     cpu: "100m"
-  #   limits:
-  #     memory: "512Mi"
-  #     cpu: "200m"
-
 kafka:
   image:
     repository: confluentinc/cp-kafka
@@ -36,13 +28,17 @@ kafka:
     offsetsTopicReplicationFactor: 1
     transactionStateLogMinIsr: 1
     transactionStateLogReplicationFactor: 1
-  
-  # resources:
-  #   requests:
-  #     memory: "512Mi"
-  #     cpu: "200m"
-  #   limits:
-  #     memory: "1Gi"
-  #     cpu: "500m"
+    
+    # 🔥 핵심: FQDN을 사용한 advertised listeners 설정
+    advertisedListeners: "PLAINTEXT://kafka-cluster-dev-broker.broker.svc.cluster.local:9092,INTERNAL://kafka-cluster-dev-broker.broker.svc.cluster.local:29092"
+    
+    # 리스너 설정 (모든 인터페이스에서 수신)
+    listeners: "PLAINTEXT://0.0.0.0:9092,INTERNAL://0.0.0.0:29092"
+    
+    # 리스너 보안 프로토콜 매핑
+    listenerSecurityProtocolMap: "PLAINTEXT:PLAINTEXT,INTERNAL:PLAINTEXT"
+    
+    # 인터 브로커 통신용 리스너
+    interBrokerListenerName: "INTERNAL"
 
 replicaCount: 1
