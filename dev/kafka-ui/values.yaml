@@ -27,13 +27,13 @@ ingress:
 kafka:
   clusters:
     - name: local
-      bootstrapServers: kafka-cluster-broker:29092  # kafka-cluster 헬름차트의 서비스명
+      bootstrapServers: broker:29092  # kafka-cluster 헬름차트의 서비스명
 
 env:
   - name: KAFKA_CLUSTERS_0_NAME
     value: "local"
   - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-    value: "kafka-cluster-broker:29092"
+    value: "broker:29092"
 
 # resources:
 #   requests:
