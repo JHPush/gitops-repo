@@ -50,7 +50,7 @@ spec:
                   name: {{ .Values.app.name }}-secret
                   key: SPRING_DATASOURCE_PASSWORD
 
-            # ✉️ Mail 관련 환경변수 (configMap 및 secret 참조)
+            # Mail 관련 환경변수 (configMap 및 secret 참조)
             - name: SPRING_MAIL_HOST
               valueFrom:
                 configMapKeyRef:
@@ -77,6 +77,11 @@ spec:
             #     secretKeyRef:
             #       name: mysql-secret
             #       key: MYSQL_ROOT_PASSWORD
+            - name: SPRING_KEYCLOAK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KEYCLOAK_URL
 
           {{- with .Values.app.resources }}
           resources:

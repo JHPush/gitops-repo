@@ -54,3 +54,5 @@ spring:
     host: sandbox.smtp.mailtrap.io
     port: 2525
     username: 503ff5868955c1
+env:
+  SPRING_KEYCLOAK_URL: http://keycloak:8080
