@@ -2,7 +2,7 @@ app:
   namespace: payment-service
   name: payment-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/payment-service:latest'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/payment-service:1dbd590c564b7eae23359cf75a9b851aee6e3f13'
   port: 12000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
 podLabels:
