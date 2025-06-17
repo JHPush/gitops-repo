@@ -1,41 +1,61 @@
-env:
-  - name: REACT_APP_KEYCLOAK_TOKEN_URL
-    valueFrom:
-      configMapKeyRef:
-        name: {{ .Values.app.name }}-env
-        key: REACT_APP_KEYCLOAK_TOKEN_URL
-  - name: REACT_APP_KEYCLOAK_CLIENT_ID
-    valueFrom:
-      configMapKeyRef:
-        name: {{ .Values.app.name }}-env
-        key: REACT_APP_KEYCLOAK_CLIENT_ID
-  - name: REACT_APP_KEYCLOAK_CLIENT_SECRET
-    valueFrom:
-      configMapKeyRef:
-        name: {{ .Values.app.name }}-env
-        key: REACT_APP_KEYCLOAK_CLIENT_SECRET
-  - name: REACT_APP_V2_API_SECRET
-    valueFrom:
-      configMapKeyRef:
-        name: {{ .Values.app.name }}-env
-        key: REACT_APP_V2_API_SECRET
-  - name: REACT_APP_V2_WEBHOOK_SECRET
-    valueFrom:
-      configMapKeyRef:
-        name: {{ .Values.app.name }}-env
-        key: REACT_APP_V2_WEBHOOK_SECRET
-  - name: REACT_APP_STORE_ID
-    valueFrom:
-      configMapKeyRef:
-        name: {{ .Values.app.name }}-env
-        key: REACT_APP_STORE_ID
-  - name: REACT_APP_CHANNEL_ID
-    valueFrom:
-      configMapKeyRef:
-        name: {{ .Values.app.name }}-env
-        key: REACT_APP_CHANNEL_ID
-  - name: REACT_APP_PREFIX_URL
-    valueFrom:
-      configMapKeyRef:
-        name: {{ .Values.app.name }}-env
-        key: REACT_APP_PREFIX_URL
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.app.name }}
+  namespace: {{ .Values.app.namespace }}
+spec:
+  replicas: {{ .Values.app.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.name }}
+    spec:
+      containers:
+        - name: {{ .Values.app.name }}
+          image: {{ .Values.app.image }}
+          ports:
+            - containerPort: 80
+          env:
+            - name: REACT_APP_KEYCLOAK_TOKEN_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_KEYCLOAK_TOKEN_URL
+            - name: REACT_APP_KEYCLOAK_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_KEYCLOAK_CLIENT_ID
+            - name: REACT_APP_KEYCLOAK_CLIENT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_KEYCLOAK_CLIENT_SECRET
+            - name: REACT_APP_V2_API_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_V2_API_SECRET
+            - name: REACT_APP_V2_WEBHOOK_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_V2_WEBHOOK_SECRET
+            - name: REACT_APP_STORE_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_STORE_ID
+            - name: REACT_APP_CHANNEL_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_CHANNEL_ID
+            - name: REACT_APP_PREFIX_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_PREFIX_URL
