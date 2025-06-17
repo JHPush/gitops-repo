@@ -56,4 +56,5 @@ spring:
     username: root
     password: "1234"
 env:
-  SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click
+  SPRING_KEYCLOAK_URL: http://keycloak.keycloak.svc.cluster.local:8080
+  SPRING_KAFKA: kafka-cluster-dev-broker.broker.svc.cluster.local:9092
