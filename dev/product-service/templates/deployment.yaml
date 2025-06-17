@@ -21,7 +21,7 @@ spec:
       # Spring Cloud API Gateway(Spring Cloud Kubernetes)가 Kubernetes API 서버를 통해 Service 목록, Endpoints 등을 검색하려면,
       # Pod가 사용하는 ServiceAccount가 있어야 하고, 그 SA가 적절한 RBAC 권한을 갖고 있어야 합니다.
       # 따라서 다음 설정은 Deployment에 반드시 포함해야 합니다:
-      serviceAccountName: {{ .Values.app.name }}-sa
+      serviceAccountName: {{ .Values.serviceAccount.name }}
       containers:
         - name: {{ .Values.app.name }}
           image: {{ .Values.app.image }}
