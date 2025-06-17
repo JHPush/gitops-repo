@@ -2,7 +2,7 @@ app:
   namespace: order-service
   name: order-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/order-service:latest'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/order-service:d191168a3843aebb5de5f72cdd19f0b7f2c5ab01'
   port: 11000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
 podLabels:
@@ -12,7 +12,7 @@ probes:
   liveness: {}
 service:
   enabled: true
-  type: NodePort
+  type: ClusterIP
   port: 80
 ingress:
   enabled: false
@@ -23,3 +23,6 @@ spring:
     url: jdbc:mysql://mysql.inkcloud.svc.cluster.local:3306/order_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
     username: root
     password: "1234"
+env:
+  SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click
+  SPRING_KAFKA: kafka-cluster-dev-broker.broker.svc.cluster.local:9092
