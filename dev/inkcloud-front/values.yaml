@@ -111,4 +111,4 @@ nodeSelector: {}
 tolerations: []
 affinity: {}
 app:
-  image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/inkcloud-front:079f46844aec50db4ed5c427696ce2d8b9a8348f
+  image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/inkcloud-front:e74897cd9e4b7849a4fce98e10574b8a78f765cf
