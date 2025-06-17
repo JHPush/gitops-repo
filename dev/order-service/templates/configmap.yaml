@@ -4,7 +4,9 @@ metadata:
   name: {{ .Values.app.name }}-config
   namespace: {{ .Values.app.namespace }}
 data:
-  SERVER_PORT: {{ .Values.app.port | quote }}
+  SPRING_ORDER_SERVER_PORT: {{ .Values.app.port | quote }}
   SPRING_PROFILES_ACTIVE: {{ .Values.spring.profiles.active | quote }}
-  SPRING_DATASOURCE_URL: {{ .Values.spring.datasource.url | quote }}
+  SPRING_ORDER_DATASOURCE_URL: {{ .Values.spring.datasource.url | quote }}
   SPRING_DATASOURCE_USERNAME: {{ .Values.spring.datasource.username | quote }}
+  SPRING_KAFKA: {{ .Values.env.SPRING_KAFKA }}
+  SPRING_KEYCLOAK_URL: {{ .Values.env.SPRING_KEYCLOAK_URL }}
