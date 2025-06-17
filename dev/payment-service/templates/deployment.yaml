@@ -67,17 +67,17 @@ spec:
             - name: SPRING_WEBHOOK_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.app.name }}-secret
+                  name: portone-secret
                   key: SPRING_WEBHOOK_SECRET
             - name: SPRING_PORTONE_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.app.name }}-secret
+                  name: portone-secret
                   key: SPRING_PORTONE_SECRET
             - name: SPRING_STORE_ID
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.app.name }}-secret
+                  name: portone-secret
                   key: SPRING_STORE_ID
           {{- with .Values.app.resources }}
           resources:
