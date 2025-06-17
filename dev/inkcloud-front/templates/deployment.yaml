@@ -1,78 +1,61 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "inkcloud-front.fullname" . }}
-  labels:
-    {{- include "inkcloud-front.labels" . | nindent 4 }}
+  name: {{ .Values.app.name }}
+  namespace: {{ .Values.app.namespace }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  replicas: {{ .Values.app.replicas }}
   selector:
     matchLabels:
-      {{- include "inkcloud-front.selectorLabels" . | nindent 6 }}
+      app: {{ .Values.app.name }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       labels:
-        {{- include "inkcloud-front.labels" . | nindent 8 }}
-        {{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
+        app: {{ .Values.app.name }}
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      serviceAccountName: {{ include "inkcloud-front.serviceAccountName" . }}
-      {{- with .Values.podSecurityContext }}
-      securityContext:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       containers:
-        - name: {{ .Chart.Name }}
-          {{- with .Values.securityContext }}
-          securityContext:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: {{ .Values.app.name }}
+          image: {{ .Values.app.image }}
           ports:
-            - name: http
-              containerPort: {{ .Values.service.port }}
-              protocol: TCP
-          {{- with .Values.livenessProbe }}
-          livenessProbe:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.readinessProbe }}
-          readinessProbe:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.resources }}
-          resources:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.volumeMounts }}
-          volumeMounts:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-      {{- with .Values.volumes }}
-      volumes:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+            - containerPort: 80
+          env:
+            - name: REACT_APP_KEYCLOAK_TOKEN_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_KEYCLOAK_TOKEN_URL
+            - name: REACT_APP_KEYCLOAK_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_KEYCLOAK_CLIENT_ID
+            - name: REACT_APP_KEYCLOAK_CLIENT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_KEYCLOAK_CLIENT_SECRET
+            - name: REACT_APP_V2_API_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_V2_API_SECRET
+            - name: REACT_APP_V2_WEBHOOK_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_V2_WEBHOOK_SECRET
+            - name: REACT_APP_STORE_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_STORE_ID
+            - name: REACT_APP_CHANNEL_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_CHANNEL_ID
+            - name: REACT_APP_PREFIX_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-env
+                  key: REACT_APP_PREFIX_URL

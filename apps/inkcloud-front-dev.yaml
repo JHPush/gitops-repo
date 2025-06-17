@@ -1,8 +1,7 @@
-# gitops-repo/dev/cart-service/values.yaml을 감시하는 Application 리소스를 Argo CD에 미리 만들어야 합니다.
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cart-service-dev            
+  name: inkcloud-front-dev          
   namespace: argocd                                            # Application 리소스 자체가 생성될 네임스페이스, Argo CD가 이 리소스를 관리할 수 있도록 해당 네임스페이스에 생성한다.
 spec:
   project: default
