@@ -52,12 +52,12 @@ spec:
             - name: SPRING_KAFKA
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.app.name }}-secret
+                  name: {{ .Values.app.name }}-config
                   key: SPRING_KAFKA
             - name: SPRING_KEYCLOAK_URL
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.app.name }}-secret
+                  name: {{ .Values.app.name }}-config
                   key: SPRING_KEYCLOAK_URL
 
           {{- with .Values.app.resources }}
