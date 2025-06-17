@@ -1,0 +1,48 @@
+zookeeper:
+  image:
+    repository: confluentinc/cp-zookeeper
+    tag: "7.4.0"
+    pullPolicy: IfNotPresent
+  
+  service:
+    type: ClusterIP
+    port: 2181
+  
+  env:
+    clientPort: 2181
+    tickTime: 2000
+  
+  # resources:
+  #   requests:
+  #     memory: "256Mi"
+  #     cpu: "100m"
+  #   limits:
+  #     memory: "512Mi"
+  #     cpu: "200m"
+
+kafka:
+  image:
+    repository: confluentinc/cp-kafka
+    tag: "7.4.0"
+    pullPolicy: IfNotPresent
+  
+  service:
+    type: ClusterIP
+    port: 9092
+    internalPort: 29092
+  
+  env:
+    brokerId: 1
+    offsetsTopicReplicationFactor: 1
+    transactionStateLogMinIsr: 1
+    transactionStateLogReplicationFactor: 1
+  
+  # resources:
+  #   requests:
+  #     memory: "512Mi"
+  #     cpu: "200m"
+  #   limits:
+  #     memory: "1Gi"
+  #     cpu: "500m"
+
+replicaCount: 1

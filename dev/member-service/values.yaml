@@ -2,7 +2,7 @@ app:
   namespace: member-service
   name: member-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:d90184185336b3c06b7fb25712d9e169b1718d58'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:a48fc827637eca9b8124a4fadeca88bd564e0fd7'
   port: 10000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
   # resources:
@@ -55,4 +55,4 @@ spring:
     port: 2525
     username: 503ff5868955c1
 env:
-  SPRING_KEYCLOAK_URL: http://keycloak:8080
+  SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click
