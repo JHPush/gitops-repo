@@ -12,3 +12,4 @@ data:
   SPRING_MAIL_HOST: {{ .Values.spring.mail.host | quote }}
   SPRING_MAIL_PORT: {{ .Values.spring.mail.port | quote }}
   SPRING_MAIL_USERNAME: {{ .Values.spring.mail.username | quote }}
+  SPRING_KEYCLOAK_URL: {{ .Values.env.SPRING_KEYCLOAK_URL | quote }}
