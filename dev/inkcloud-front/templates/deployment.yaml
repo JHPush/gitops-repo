@@ -54,8 +54,8 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-env
                   key: REACT_APP_CHANNEL_ID
-            - name: REACT_APP_PREFIX_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ .Values.app.name }}-env
-                  key: REACT_APP_PREFIX_URL
+            # - name: REACT_APP_PREFIX_URL
+            #   valueFrom:
+            #     configMapKeyRef:
+            #       name: {{ .Values.app.name }}-env
+            #       key: REACT_APP_PREFIX_URL
