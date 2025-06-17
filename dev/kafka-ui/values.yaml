@@ -33,7 +33,8 @@ env:
   - name: KAFKA_CLUSTERS_0_NAME
     value: "local"
   - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-    value: "broker.kafka-cluster-dev-broker:29092"
+    value: "kafka-cluster-dev-broker.broker.svc.cluster.local:29092"
+    # value: "broker.kafka-cluster-dev-broker:29092"
 
 # resources:
 #   requests:
