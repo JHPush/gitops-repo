@@ -24,11 +24,11 @@ spec:
           ports:
             - containerPort: {{ .Values.app.port }}             
           env:
-            - name: SERVER_PORT
+            - name: SPRING_SERVER_PORT
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
-                  key: SERVER_PORT
+                  key: SPRING_SERVER_PORT
             - name: SPRING_PROFILES_ACTIVE
               valueFrom:
                 configMapKeyRef:
@@ -44,28 +44,41 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_DATASOURCE_USERNAME
+            - name: SPRING_KAFKA
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KAFKA
+            - name: SPRING_API_GATEWAY_CORS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_API_GATEWAY_CORS
+            - name: SPRING_KEYCLOAK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KEYCLOAK_URL
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.app.name }}-secret
                   key: SPRING_DATASOURCE_PASSWORD
-
             - name: SPRING_WEBHOOK_SECRET
               valueFrom:
-                configMapKeyRef:
-                  name: payment-service-secret
+                secretKeyRef:
+                  name: {{ .Values.app.name }}-secret
                   key: SPRING_WEBHOOK_SECRET
             - name: SPRING_PORTONE_SECRET
               valueFrom:
-                configMapKeyRef:
-                  name: payment-service-secret
+                secretKeyRef:
+                  name: {{ .Values.app.name }}-secret
                   key: SPRING_PORTONE_SECRET
             - name: SPRING_STORE_ID
               valueFrom:
-                configMapKeyRef:
-                  name: payment-service-secret
+                secretKeyRef:
+                  name: {{ .Values.app.name }}-secret
                   key: SPRING_STORE_ID
-
           {{- with .Values.app.resources }}
           resources:
             {{- toYaml . | nindent 12 }}
