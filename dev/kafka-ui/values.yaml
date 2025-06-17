@@ -18,31 +18,21 @@ ingress:
     # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     # alb.ingress.kubernetes.io/ssl-redirect: "443"
   hosts:
-    - host: placeholder.local  # 실제 도메인으로 변경 필요
-    paths:
-      - path: /
-        pathType: Prefix
+    - paths:  # 🔥 host 없이 ALB DNS로 접근
+        - path: /
+          pathType: Prefix
   tls: []
 
 kafka:
   clusters:
     - name: local
-      bootstrapServers: kafka-cluster-dev-broker.broker.svc.cluster.local:9092  # kafka-cluster 헬름차트의 서비스명
+      bootstrapServers: kafka-cluster-dev-broker.broker.svc.cluster.local:9092
 
 env:
   - name: KAFKA_CLUSTERS_0_NAME
     value: "local"
   - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-    value: "kafka-cluster-dev-broker.broker.svc.cluster.local:9092"
-    # value: "broker.kafka-cluster-dev-broker:29092"
-
-# resources:
-#   requests:
-#     memory: "128Mi"
-#     cpu: "50m"
-#   limits:
-#     memory: "256Mi"
-#     cpu: "100m"
+    value: "kafka-cluster-dev-broker.broker.svc.cluster.local:9092"  # 🔥 포트 번호 포함 맞음
 
 replicaCount: 1
 
