@@ -60,6 +60,12 @@ spec:
             #     secretKeyRef:
             #       name: mysql-secret
             #       key: MYSQL_ROOT_PASSWORD
+            - name: SPRING_KEYCLOAK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KEYCLOAK_URL
+
 
           {{- with .Values.app.resources }}
           resources:
