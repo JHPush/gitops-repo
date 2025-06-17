@@ -55,4 +55,4 @@ spring:
     port: 2525
     username: 503ff5868955c1
 env:
-  SPRING_KEYCLOAK_URL: http://keycloak:8080
+  SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click
