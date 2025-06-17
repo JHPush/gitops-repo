@@ -18,7 +18,7 @@ ingress:
     # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     # alb.ingress.kubernetes.io/ssl-redirect: "443"
   hosts:
-    - host: kafka-ui.your-domain.com  # 실제 도메인으로 변경 필요
+    - host: placeholder.local  # 실제 도메인으로 변경 필요
       paths:
         - path: /
           pathType: Prefix
@@ -27,13 +27,14 @@ ingress:
 kafka:
   clusters:
     - name: local
-      bootstrapServers: broker:29092  # kafka-cluster 헬름차트의 서비스명
+      bootstrapServers: kafka-cluster-dev-broker.broker.svc.cluster.local:29092  # kafka-cluster 헬름차트의 서비스명
 
 env:
   - name: KAFKA_CLUSTERS_0_NAME
     value: "local"
   - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-    value: "broker.kafka-cluster-dev-broker:29092"
+    value: "kafka-cluster-dev-broker.broker.svc.cluster.local:29092"
+    # value: "broker.kafka-cluster-dev-broker:29092"
 
 # resources:
 #   requests:
