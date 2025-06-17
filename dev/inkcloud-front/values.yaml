@@ -2,7 +2,8 @@ app:
   namespace: inkcloud-front
   name: inkcloud-front
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/inkcloud-front:7da73166cf5f533a3f6f16620d1389d608faeb5f'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/inkcloud-front:205980f8fe8a2b20ab821baf1a67572798744b5e'
+
 env:
   REACT_APP_KEYCLOAK_TOKEN_URL: http://localhost:8080/realms/inkcloud/protocol/openid-connect/token
   REACT_APP_KEYCLOAK_CLIENT_ID: react-app
@@ -11,7 +12,8 @@ env:
   REACT_APP_V2_WEBHOOK_SECRET: whsec_eHbQOBcyaLiczfx7exstiy9GtdkM9Z/gT/3p0I9yhgs=
   REACT_APP_STORE_ID: store-a4a84348-266c-4b8a-9c92-97021a22d621
   REACT_APP_CHANNEL_ID: channel-key-ed57122d-6577-4a17-aca2-52f431c26705
-  # REACT_APP_PREFIX_URL: http://api-gateway-service.inkcloud.svc.cluster.local/api/v1
+  REACT_APP_PREFIX_URL: /api/v1
+
 
 ingress:
   enabled: true
