@@ -10,3 +10,4 @@ data:
   SPRING_DATASOURCE_USERNAME: {{ .Values.spring.datasource.username | quote }}
   SPRING_KAFKA: {{ .Values.env.SPRING_KAFKA }}
   SPRING_KEYCLOAK_URL: {{ .Values.env.SPRING_KEYCLOAK_URL }}
+  SPRING_API_GATEWAY_CORS: {{ .Values.env.SPRING_API_GATEWAY_CORS }}

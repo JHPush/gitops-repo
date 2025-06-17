@@ -49,6 +49,11 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_KAFKA
+            - name: SPRING_API_GATEWAY_CORS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_API_GATEWAY_CORS
             - name: SPRING_KEYCLOAK_URL
               valueFrom:
                 configMapKeyRef:
