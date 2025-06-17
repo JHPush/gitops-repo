@@ -11,7 +11,8 @@ env:
   REACT_APP_V2_WEBHOOK_SECRET: whsec_eHbQOBcyaLiczfx7exstiy9GtdkM9Z/gT/3p0I9yhgs=
   REACT_APP_STORE_ID: store-a4a84348-266c-4b8a-9c92-97021a22d621
   REACT_APP_CHANNEL_ID: channel-key-ed57122d-6577-4a17-aca2-52f431c26705
-  REACT_APP_PREFIX_URL: http://api-gateway-service.inkcloud.svc.cluster.local/api/v1
+  # REACT_APP_PREFIX_URL: http://api-gateway-service.inkcloud.svc.cluster.local/api/v1
+
 ingress:
   enabled: true
   host: www.inkcloud.click
