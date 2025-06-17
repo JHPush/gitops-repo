@@ -2,7 +2,7 @@ app:
   namespace: payment-service
   name: payment-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/payment-service:latest'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/payment-service:c304c426486464e15f1f1a791235442b72aad759'
   port: 12000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
 podLabels:
@@ -23,3 +23,10 @@ spring:
     url: jdbc:mysql://mysql.inkcloud.svc.cluster.local:3306/payment_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
     username: root
     password: "1234"
+env:
+  SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click
+  SPRING_KAFKA: kafka-cluster-dev-broker.broker.svc.cluster.local:9092
+  SPRING_API_GATEWAY_CORS: api-gateway-service-dev.inkcloud.svc.cluster.local:25000
+  SPRING_WEBHOOK_SECRET: whsec_F5+Qc5jAfenRpoC2wFCxystTunmW4aHJXXGEVbiNw7w=
+  SPRING_PORTONE_SECRET: cyoQxZNEY33bx9uwD0BIG8SRhmguNFWJ8spbi40rSP5G12IupV3sfSGoSRbyw0fjtSTsHq1VOVv4DX29
+  SPRING_STORE_ID: store-c2066836-39bc-4ccd-8cd1-37501975c002

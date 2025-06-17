@@ -1,9 +1,9 @@
 app:
-  namespace: product-service
-  name: product-service-api
+  namespace: cart-service
+  name: cart-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/product-service:e12866f0325c0059a9d245c87ff8acd6cad5982e'
-  port: 15000
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/cart-service:740e47af0e64257213e24e45268f2c9587d64144'
+  port: 13000
   resources: {}
   # resources:
   #  requests:
@@ -34,11 +34,6 @@ service:
   enabled: true
   type: ClusterIP
   port: 80
-serviceAccount:
-  create: true
-  name: product-sa
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::430118853107:role/ProductServiceRole
 ingress:
   enabled: true
   annotations:
@@ -52,9 +47,8 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://mysql.inkcloud.svc.cluster.local:3306/product_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    url: jdbc:mysql://mysql.inkcloud.svc.cluster.local:3306/cart_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
     username: root
     password: "1234"
 env:
   SPRING_KEYCLOAK_URL: http://keycloak.keycloak.svc.cluster.local:8080
-  SPRING_KAFKA: kafka-cluster-dev-broker.broker.svc.cluster.local:9092
