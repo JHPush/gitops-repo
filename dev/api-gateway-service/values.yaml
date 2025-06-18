@@ -2,10 +2,10 @@ app:
   name: api-gateway-service
   namespace: inkcloud
   image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/api-gateway-service:014023bb84615dd541f69e815fb3b86ccc6b2866
-  port: 8080
+  port: 25000
   replicas: 1
 env:
-  SERVER_PORT: 8080
+  SERVER_PORT: 25000
   SPRING_PROFILES_ACTIVE: "dev"
   MEMBER_SERVICE_API_URL: "http://member-service-api.member-service.svc.cluster.local"
   REVIEW_SERVICE_API_URL: "http://review-service-api.review-service.svc.cluster.local"
@@ -18,7 +18,7 @@ env:
   SPRING_KEYCLOAK_URL: "https://keycloak.inkcloud.click/realms/inkcloud"
 service:
   type: ClusterIP
-  port: 8080
+  port: 25000
 ingress:
   enabled: false
   annotations:

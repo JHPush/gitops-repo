@@ -1,8 +1,10 @@
 apiVersion: v1
-kind: Secret
+kind: ConfigMap
 metadata:
-  name: {{ .Values.app.name }}-secret
+  name: {{ .Values.app.name }}-config
   namespace: {{ .Values.app.namespace }}
-type: Opaque
 data:
-  SPRING_DATASOURCE_PASSWORD: {{ .Values.spring.datasource.password | b64enc | quote }}
+  SERVER_PORT: {{ .Values.app.port | quote }}
+  SPRING_PROFILES_ACTIVE: {{ .Values.spring.profiles.active | quote }}
+  SPRING_KEYCLOAK_URL: {{ .Values.env.SPRING_KEYCLOAK_URL | quote }}
+  SPRING_KAFKA: {{ .Values.env.SPRING_KAFKA | quote }}
