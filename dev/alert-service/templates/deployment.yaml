@@ -50,10 +50,15 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_MAIL_USERNAME
+            - name: SPRING_KAFKA
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KAFKA
             - name: SPRING_MAIL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: member-service-secret
+                  name: alert-secret
                   key: SPRING_MAIL_PASSWORD
 
           {{- with .Values.app.resources }}
