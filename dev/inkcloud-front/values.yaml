@@ -6,8 +6,8 @@ app:
 env:
   REACT_APP_KEYCLOAK_TOKEN_URL: https://keycloak.inkcloud.click/realms/inkcloud/protocol/openid-connect/token
   REACT_APP_KEYCLOAK_CLIENT_ID: react-app
-  REACT_APP_STORE_ID: store-a4a84348-266c-4b8a-9c92-97021a22d621
-  REACT_APP_CHANNEL_ID: channel-key-ed57122d-6577-4a17-aca2-52f431c26705
+  REACT_APP_STORE_ID: store-c2066836-39bc-4ccd-8cd1-37501975c002
+  REACT_APP_CHANNEL_ID: channel-key-bdc01ed7-11ea-4249-b830-75f9ee3d5580
   REACT_APP_PREFIX_URL: /api/v1
 ingress:
   enabled: true
