@@ -38,7 +38,7 @@ serviceAccount:
   create: true
   name: product-sa
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::430118853107:role/ProductServiceRole
+    eks.amazonaws.com/role-arn: arn:aws:iam::430118853107:role/S3AccessRoleForProductService
 ingress:
   enabled: true
   annotations:
