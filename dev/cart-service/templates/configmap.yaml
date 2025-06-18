@@ -9,3 +9,4 @@ data:
   SPRING_CART_DATASOURCE_URL: {{ .Values.spring.datasource.url | quote }}
   SPRING_DATASOURCE_USERNAME: {{ .Values.spring.datasource.username | quote }}
   SPRING_KEYCLOAK_URL: {{ .Values.env.SPRING_KEYCLOAK_URL | quote }}
+  SPRING_API_GATEWAY_PRODUCT_CORS: {{ .Values.env.SPRING_API_GATEWAY_PRODUCT_CORS | quote }}

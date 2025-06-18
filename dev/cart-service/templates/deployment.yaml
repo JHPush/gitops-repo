@@ -52,18 +52,16 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.app.name }}-secret
                   key: SPRING_DATASOURCE_PASSWORD
-
-            # mysql 서비스에 설정된 Secret 설정 정보 참조
-            # - name: SPRING_DATASOURCE_PASSWORD
-            #   valueFrom:
-            #     secretKeyRef:
-            #       name: mysql-secret
-            #       key: MYSQL_ROOT_PASSWORD
             - name: SPRING_KEYCLOAK_URL
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_KEYCLOAK_URL
+            - name: SPRING_API_GATEWAY_PRODUCT_CORS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_API_GATEWAY_PRODUCT_CORS
 
           {{- with .Values.app.resources }}
           resources:
