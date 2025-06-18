@@ -49,6 +49,16 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.app.name }}-secret
                   key: SPRING_DATASOURCE_PASSWORD
+            - name: SPRING_KEYCLOAK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KEYCLOAK_URL
+            - name: SPRING_KAFKA
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KAFKA
 
           {{- with .Values.app.resources }}
           resources:
