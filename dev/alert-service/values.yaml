@@ -2,7 +2,7 @@ app:
   namespace: alert-service
   name: alert-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/alert-service:30c1e0fdd7d5d88d226c2a3b6932408380971345'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/alert-service:40889f07c2d5816100b3c6a7577986e1e60eb2d5'
   port: 17777 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
 podLabels:
