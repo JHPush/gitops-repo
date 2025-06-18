@@ -43,6 +43,11 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_KEYCLOAK_URL
+            - name: SPRING_KAFKA
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KAFKA
             
 
           {{- with .Values.app.resources }}
