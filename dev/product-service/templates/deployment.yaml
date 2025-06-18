@@ -28,26 +28,42 @@ spec:
           ports:
             - containerPort: {{ .Values.app.port }}             
           env:
-            - name: SERVER_PORT
+            - name: SPRING_PRODUCT_SERVER_PORT
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
-                  key: SERVER_PORT
+                  key: SPRING_PRODUCT_SERVER_PORT
             - name: SPRING_PROFILES_ACTIVE
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_PROFILES_ACTIVE
-            - name: SPRING_DATASOURCE_URL
+            - name: SPRING_PRODUCT_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
-                  key: SPRING_DATASOURCE_URL
+                  key: SPRING_PRODUCT_DATASOURCE_URL
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_DATASOURCE_USERNAME
+            - name: SPRING_KEYCLOAK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KEYCLOAK_URL
+            
+            - name: SPRING_KAFKA
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: SPRING_KAFKA
+            - name: AWS_S3_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: AWS_S3_BUCKET
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -60,23 +76,7 @@ spec:
             #     secretKeyRef:
             #       name: mysql-secret
             #       key: MYSQL_ROOT_PASSWORD
-            - name: SPRING_KEYCLOAK_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ .Values.app.name }}-config
-                  key: SPRING_KEYCLOAK_URL
-            
-            - name: SPRING_KAFKA
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ .Values.app.name }}-config
-                  key: SPRING_KAFKA
 
-            - name: AWS_S3_BUCKET
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ .Values.app.name }}-config
-                  key: AWS_S3_BUCKET
 
 
           {{- with .Values.app.resources }}
