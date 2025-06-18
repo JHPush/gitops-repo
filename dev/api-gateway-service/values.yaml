@@ -1,7 +1,7 @@
 app:
   name: api-gateway-service
   namespace: inkcloud
-  image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/api-gateway-service:528cf8f9916a27f2902456df762e44c15c4b0305
+  image: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/api-gateway-service:014023bb84615dd541f69e815fb3b86ccc6b2866
   port: 8080
   replicas: 1
 env:
