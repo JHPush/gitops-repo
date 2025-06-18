@@ -72,6 +72,12 @@ spec:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_KAFKA
 
+            - name: AWS_S3_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
+                  key: AWS_S3_BUCKET
+
 
           {{- with .Values.app.resources }}
           resources:
