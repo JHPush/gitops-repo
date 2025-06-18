@@ -2,7 +2,7 @@ app:
   namespace: bestsellers-service
   name: bestsellers-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/bestsellers-service:271c80be16fbeec910ef32f5c8c8fccb55ff26aa'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/bestsellers-service:5a4c921e0f4c9a7c9da68f195326e71020cd3861'
   port: 14000
   resources: {}
   # resources:
