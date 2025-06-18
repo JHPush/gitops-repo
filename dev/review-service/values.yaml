@@ -2,7 +2,7 @@ app:
   namespace: review-service
   name: review-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/review-service:487bdbe07dd17cf45f9b4e70b1afbc7614ca728b'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/member-service:064fb451785ebf23eaeb340a318ce3ea1613eefc'
   port: 18000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
   # resources:
@@ -53,4 +53,3 @@ spring:
 env:
   SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click
   SPRING_KAFKA: kafka-cluster-dev-broker.broker.svc.cluster.local:9092
-
