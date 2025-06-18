@@ -2,7 +2,7 @@ app:
   namespace: cart-service
   name: cart-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/cart-service:740e47af0e64257213e24e45268f2c9587d64144'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/cart-service:2ffecc24958504d264be400d03731e898a84af6d'
   port: 13000
   resources: {}
   # resources:
@@ -36,13 +36,13 @@ service:
   port: 80
 ingress:
   enabled: false
-    #    annotations:
-    #    alb.ingress.kubernetes.io/scheme: internet-facing
-    #    alb.ingress.kubernetes.io/target-type: ip
-    #  className: alb
-    #  host: ""
-    #  path: /
-    #  pathType: Prefix
+  #    annotations:
+  #    alb.ingress.kubernetes.io/scheme: internet-facing
+  #    alb.ingress.kubernetes.io/target-type: ip
+  #  className: alb
+  #  host: ""
+  #  path: /
+  #  pathType: Prefix
 spring:
   profiles:
     active: dev
