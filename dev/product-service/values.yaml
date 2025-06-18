@@ -2,7 +2,7 @@ app:
   namespace: product-service
   name: product-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/product-service:57ed27122ca06f1eceee1b0bddf948eb3796bd1f'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/product-service:4e92e9564cefcf4ac12d8e4d35b4dee96ea05abd'
   port: 15000
   resources: {}
   # resources:
@@ -41,13 +41,13 @@ serviceAccount:
     eks.amazonaws.com/role-arn: arn:aws:iam::430118853107:role/S3AccessRoleForProductService
 ingress:
   enabled: false
-    #  annotations:
-    #    alb.ingress.kubernetes.io/scheme: internet-facing
-    #    alb.ingress.kubernetes.io/target-type: ip
-    #  className: alb
-    #  host: ""
-    #  path: /
-    #  pathType: Prefix
+  #  annotations:
+  #    alb.ingress.kubernetes.io/scheme: internet-facing
+  #    alb.ingress.kubernetes.io/target-type: ip
+  #  className: alb
+  #  host: ""
+  #  path: /
+  #  pathType: Prefix
 spring:
   profiles:
     active: dev
