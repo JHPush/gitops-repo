@@ -2,7 +2,7 @@ app:
   namespace: stats-service
   name: stats-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/stats-service:da7fbdde66d47327bd9b554656314a323d83bed9'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/stats-service:2888f1cc3d9149a1824b9dbf843f947eab3a6c21'
   port: 19000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
   # resources:
@@ -54,4 +54,3 @@ serviceAccount:
   name: stats-service-sa
   annotations:
     eks.amazonaws.com/role-arn: arn:aws:iam::<ACCOUNT_ID>:role/<IRSA_ROLE_NAME>
-
