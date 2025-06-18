@@ -2,7 +2,7 @@ app:
   namespace: cart-service
   name: cart-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/cart-service:2ffecc24958504d264be400d03731e898a84af6d'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/cart-service:1eb5d8a6b746ed7988ddce992aa8e9c34b1227b0'
   port: 13000
   resources: {}
   # resources:
