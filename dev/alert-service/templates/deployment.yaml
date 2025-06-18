@@ -24,11 +24,11 @@ spec:
           ports:
             - containerPort: {{ .Values.app.port }}             
           env:
-            - name: SERVER_PORT
+            - name: SPRING_ALERT_SERVER_PORT
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
-                  key: SERVER_PORT
+                  key: SPRING_ALERT_SERVER_PORT
             - name: SPRING_PROFILES_ACTIVE
               valueFrom:
                 configMapKeyRef:
@@ -55,12 +55,6 @@ spec:
                 secretKeyRef:
                   name: member-service-secret
                   key: SPRING_MAIL_PASSWORD
-            # mysql 서비스에 설정된 Secret 설정 정보 참조
-            # - name: SPRING_DATASOURCE_PASSWORD
-            #   valueFrom:
-            #     secretKeyRef:
-            #       name: mysql-secret
-            #       key: MYSQL_ROOT_PASSWORD
 
           {{- with .Values.app.resources }}
           resources:
