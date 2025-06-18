@@ -53,6 +53,6 @@ serviceAccount:
   create: true
   name: stats-service-sa
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::430118853107:role/stats-service-role
+    eks.amazonaws.com/role-arn: arn:aws:iam::430118853107:role/StatsServiceAccessRole
 
 
