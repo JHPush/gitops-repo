@@ -26,4 +26,4 @@ spring:
 env:
   SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click
   SPRING_KAFKA: kafka-cluster-dev-broker.broker.svc.cluster.local:9092
-  SPRING_API_GATEWAY_CORS: api-gateway-service-dev.inkcloud.svc.cluster.local:25000
+  SPRING_API_GATEWAY_CORS: api-gateway-service-dev.inkcloud.svc.cluster.local
