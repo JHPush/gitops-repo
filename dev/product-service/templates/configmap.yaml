@@ -11,3 +11,4 @@ data:
   # PRODUCT_SERVICE_API_URL: {{ .Values.app.product_service_api_url | quote }}
   SPRING_KEYCLOAK_URL: {{ .Values.env.SPRING_KEYCLOAK_URL | quote }}
   SPRING_KAFKA: {{ .Values.env.SPRING_KAFKA | quote }}
+  AWS_S3_BUCKET: {{ .Values.env.AWS_S3_BUCKET | quote }}
