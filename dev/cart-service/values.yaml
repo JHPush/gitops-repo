@@ -35,14 +35,14 @@ service:
   type: ClusterIP
   port: 80
 ingress:
-  enabled: true
-  annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-  className: alb
-  host: ""
-  path: /
-  pathType: Prefix
+  enabled: false
+    #    annotations:
+    #    alb.ingress.kubernetes.io/scheme: internet-facing
+    #    alb.ingress.kubernetes.io/target-type: ip
+    #  className: alb
+    #  host: ""
+    #  path: /
+    #  pathType: Prefix
 spring:
   profiles:
     active: dev
@@ -51,4 +51,4 @@ spring:
     username: root
     password: "1234"
 env:
-  SPRING_KEYCLOAK_URL: http://keycloak.keycloak.svc.cluster.local:8080
+  SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click

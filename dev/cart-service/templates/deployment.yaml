@@ -27,21 +27,21 @@ spec:
           ports:
             - containerPort: {{ .Values.app.port }}             
           env:
-            - name: SERVER_PORT
+            - name: SPRING_CART_SERVER_PORT
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
-                  key: SERVER_PORT
+                  key: SPRING_CART_SERVER_PORT
             - name: SPRING_PROFILES_ACTIVE
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
                   key: SPRING_PROFILES_ACTIVE
-            - name: SPRING_DATASOURCE_URL
+            - name: SPRING_CART_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-config
-                  key: SPRING_DATASOURCE_URL
+                  key: SPRING_CART_DATASOURCE_URL
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 configMapKeyRef:
