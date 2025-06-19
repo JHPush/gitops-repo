@@ -51,8 +51,14 @@ spring:
     username: root
     password: "1234"
   mail:
-    host: sandbox.smtp.mailtrap.io
-    port: 2525
-    username: 503ff5868955c1
+    host: smtp.gmail.com
+    port: 587
+    username: jamong0125@gmail.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 env:
   SPRING_KEYCLOAK_URL: https://keycloak.inkcloud.click
