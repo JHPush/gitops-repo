@@ -29,21 +29,21 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.app.name }}-env
                   key: REACT_APP_KEYCLOAK_CLIENT_ID
-            - name: REACT_APP_KEYCLOAK_CLIENT_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: inkcloud-front-secret
-                  key: REACT_APP_KEYCLOAK_CLIENT_SECRET
-            - name: REACT_APP_V2_API_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: inkcloud-front-secret
-                  key: REACT_APP_V2_API_SECRET
-            - name: REACT_APP_V2_WEBHOOK_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: inkcloud-front-secret
-                  key: REACT_APP_V2_WEBHOOK_SECRET
+            # - name: REACT_APP_KEYCLOAK_CLIENT_SECRET
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: inkcloud-front-secret
+            #       key: REACT_APP_KEYCLOAK_CLIENT_SECRET
+            # - name: REACT_APP_V2_API_SECRET
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: inkcloud-front-secret
+            #       key: REACT_APP_V2_API_SECRET
+            # - name: REACT_APP_V2_WEBHOOK_SECRET
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: inkcloud-front-secret
+            #       key: REACT_APP_V2_WEBHOOK_SECRET
             - name: REACT_APP_STORE_ID
               valueFrom:
                 configMapKeyRef:
