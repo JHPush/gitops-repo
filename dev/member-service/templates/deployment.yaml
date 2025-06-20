@@ -63,8 +63,8 @@ spec:
                   key: SPRING_MAIL_PORT
             - name: SPRING_MAIL_USERNAME
               valueFrom:
-                secretKeyRef:
-                  name: member-service-secret
+                configMapKeyRef:
+                  name: {{ .Values.app.name }}-config
                   key: SPRING_MAIL_USERNAME
             - name: SPRING_MAIL_PASSWORD
               valueFrom:
