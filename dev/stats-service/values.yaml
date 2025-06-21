@@ -2,7 +2,7 @@ app:
   namespace: stats-service
   name: stats-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/stats-service:1a16c6c1e216ee2f9a0b7126a37879a87968bcde'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/stats-service:83e1be7571290c250b3dbc34b60b5579ed6ce88d'
   port: 19000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
   # resources:
