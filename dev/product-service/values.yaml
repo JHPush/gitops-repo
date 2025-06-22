@@ -2,7 +2,7 @@ app:
   namespace: product-service
   name: product-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/product-service:c0764049af36c881ae08cd4bdd0022118c129620'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/product-service:aeef3b30d363a75664df39c4666a6e62554758bf'
   port: 15000
   resources: {}
   # resources:
