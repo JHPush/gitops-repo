@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cart-cleanup-cronjob
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/PoorHotsix/gitops-repo.git
+    targetRevision: main
+    path: dev/cart-cleanup-cronjob
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cart-service
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+

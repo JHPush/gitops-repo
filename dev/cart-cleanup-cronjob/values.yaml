@@ -1,0 +1,22 @@
+namespace: cart-service
+
+schedule: "0 3 * * *"  # 매일 새벽 3시
+
+image:
+  repository: 430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/cart-service
+  tag: 1eb5d8a6b746ed7988ddce992aa8e9c34b1227b0
+
+spring:
+  datasource:
+    url: jdbc:mysql://mysql.inkcloud.svc.cluster.local:3306/cart_db?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    username: root
+    password: "1234"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
+
