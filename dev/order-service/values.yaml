@@ -2,7 +2,7 @@ app:
   namespace: order-service
   name: order-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/order-service:c83845181a6c188c92e9b64fa81ca06b7c9d2027'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/order-service:f254a5e0098cd6d6b3f7d5e541708f57ba8f5ac6'
   port: 11000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
 podLabels:
