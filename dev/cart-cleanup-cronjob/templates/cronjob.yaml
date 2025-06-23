@@ -16,6 +16,8 @@ spec:
             - name: cart-cleanup
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
               env:
+                - name: SPRING_CART_SERVER_PORT
+                  value: "13000"
                 - name: SPRING_DATASOURCE_URL
                   value: {{ .Values.spring.datasource.url | quote }}
                 - name: SPRING_DATASOURCE_USERNAME
