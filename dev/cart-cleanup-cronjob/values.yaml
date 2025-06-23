@@ -15,6 +15,9 @@ spring:
   keycloak:
     url: https://keycloak.inkcloud.click
 
+  apiGateway:
+    productCors: http://api-gateway-service.inkcloud.svc.cluster.local:25000/api/v1/products
+
 resources:
   requests:
     cpu: 100m

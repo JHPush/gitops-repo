@@ -27,6 +27,8 @@ spec:
                   value: {{ .Values.spring.datasource.password | quote }}
                 - name: SPRING_KEYCLOAK_URL
                   value: {{ .Values.spring.keycloak.url | quote }}
+                - name: SPRING_API_GATEWAY_PRODUCT_CORS
+                  value: {{ .Values.spring.apiGateway.productCors | quote }}
               resources:                         # ✅ 여기에 위치해야 함!
                 {{- toYaml .Values.resources | nindent 16 }}
           restartPolicy: OnFailure
