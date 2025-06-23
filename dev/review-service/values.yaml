@@ -2,7 +2,7 @@ app:
   namespace: review-service
   name: review-service-api
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/review-service:6d698388b35b47caf2a35300506dbefb73915644'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/review-service:fcaf00c62fb41487b2f33ab165d1e631206435c1'
   port: 18000 # 퍄드(컨테이너화된 애플리케이션) 서비스 포트
   resources: {}
   # resources:
