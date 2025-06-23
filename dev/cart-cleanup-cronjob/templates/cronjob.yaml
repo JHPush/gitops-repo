@@ -15,7 +15,6 @@ spec:
           containers:
             - name: cart-cleanup
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-              command: ["java", "-jar", "/app.jar", "--spring.profiles.active=cleanup"]
               env:
                 - name: SPRING_DATASOURCE_URL
                   value: {{ .Values.spring.datasource.url | quote }}
