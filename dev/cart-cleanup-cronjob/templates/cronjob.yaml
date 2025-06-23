@@ -25,6 +25,8 @@ spec:
                   value: {{ .Values.spring.datasource.username | quote }}
                 - name: SPRING_DATASOURCE_PASSWORD
                   value: {{ .Values.spring.datasource.password | quote }}
+                - name: SPRING_KEYCLOAK_URL
+                  value: "https://keycloak.inkcloud.click"
               resources:                         # ✅ 여기에 위치해야 함!
                 {{- toYaml .Values.resources | nindent 16 }}
           restartPolicy: OnFailure
