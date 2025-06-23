@@ -2,7 +2,7 @@ app:
   namespace: inkcloud-front
   name: inkcloud-front
   replicas: 1
-  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/inkcloud-front:5bbecb22bac4c90b241c5ed5387f93e9bcd85ade'
+  image: '430118853107.dkr.ecr.ap-northeast-2.amazonaws.com/inkcloud-front:b219f70a3542bfc7f149f4972b589f15c1af7fa0'
 env:
   REACT_APP_KEYCLOAK_TOKEN_URL: https://keycloak.inkcloud.click/realms/inkcloud/protocol/openid-connect/token
   REACT_APP_KEYCLOAK_CLIENT_ID: react-app
