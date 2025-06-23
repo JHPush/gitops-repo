@@ -15,6 +15,7 @@ spec:
           containers:
             - name: cart-cleanup
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+              args: ["--spring.profiles.active=cleanup"]
               env:
                 - name: SPRING_CART_SERVER_PORT
                   value: "13000"
